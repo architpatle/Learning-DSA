@@ -65,24 +65,81 @@ int main()
 
     // ***** Problem 1 *****
 
-    int n;
+    // int n;
 
-    cout << "Enter a number: ";
-    cin >> n;
+    // cout << "Enter a number: ";
+    // cin >> n;
 
-    for (int i = 0; i < n; i++)
-    {
+    // for (int i = 0; i < n; i++)
+    // {
 
-        for (int j = 0; j < n; j++)
-        {
+    //     for (int j = 0; j < n; j++)
+    //     {
 
-            if (i >= j)
-            {
-                cout << "* ";
-            }
-        }
-        cout<<endl;
-    }
+    //         if (i >= j)
+    //         {
+    //             cout << "* ";
+    //         }
+    //     }
+    //     cout<<endl;
+    // }
+
+    // ***** Problem 2 *****
+
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+
+    // for(int i=0; i<n; i++){
+
+    //     for(int j=0; j<=i; j++){
+    //         cout<<i+1;
+    //     }
+
+    //     cout<<endl;
+    // }
+
+    // ***** Problem 3 *****
+
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+    // char ch = 'A';
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j <= i; j++)
+    //     {
+    //         cout << ch<<" ";
+    //     }
+    //     cout << endl;
+    //         ch++;
+
+    // }
+
+    // ***** Problem 4 *****
+
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j <= i; j++)
+    //     {
+    //         cout << j+1;
+    //     }
+    //     cout << endl;
+    // }
+
+
+    // ***** Reverse Triangle Pattern *****
+
+    // ***** Problem 1 *****
+
 
     return 0;
 }
