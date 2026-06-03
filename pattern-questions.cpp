@@ -135,11 +135,133 @@ int main()
     //     cout << endl;
     // }
 
-
     // ***** Reverse Triangle Pattern *****
 
     // ***** Problem 1 *****
 
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = i + 1; j > 0; j--)
+    //     {
+    //         cout << j;
+    //     }
+
+    //     cout << endl;
+    // }
+
+    // ***** Floyd's Triangle Pattern *****
+
+    // ***** Problem 1 *****
+
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+    // int k = 1;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j < i + 1; j++)
+    //     {
+    //         cout << k << " ";
+    //         k++;
+    //     }
+
+    //     cout << endl;
+    // }
+
+    // ***** Problem 2 *****
+
+    // int n;
+    // char ch = 'A';
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = i + 1; j > 0; j--)
+    //     {
+    //         cout << ch << " ";
+    //         ch++;
+    //     }
+
+    //     cout << endl;
+    // }
+
+    // ***** Inverted Triangle Pattern *****
+
+    // ***** Problem 1 *****
+
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int k = 0; k < i; k++)
+    //     {
+    //         cout << "  ";
+    //     }
+    //     for (int j = 0; j < n - i; j++)
+    //     {
+
+    //         cout << i + 1<< " ";
+    //     }
+
+    //     cout << endl;
+    // }
+
+    // ***** Pyramid Pattern *****
+
+    // ***** Problem 1 *****
+
+    // int n;
+
+    // cout << "Enter a number: ";
+    // cin >> n;
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for(int j = 0; j<n-i-1; j++){
+    //         cout<<"  ";
+    //     }
+    //     for(int k = 0; k<=i; k++){
+    //         cout<<k+1<<" ";
+    //     }
+    //     for(int l = i; l>0; l--){
+    //         cout<<l<<" ";
+    //     }
+
+    //     cout<<endl;
+    // }
+
+    // ***** Hollow Diamond Pattern *****
+
+    // ***** Problem 1 *****
+
+    int n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        for(int j = 0; j<n*2-1; j++){
+         if(j==n-i-1 || j==0 || j==n+i){
+            cout<<"*";
+         }else{
+            cout<<" ";
+         }
+        }
+        cout << endl;
+    }
 
     return 0;
 }
