@@ -105,7 +105,38 @@ void primeNumbersTillN(int n)
         }
         if (isPrime)
         {
-            cout << j<<" ";
+            cout << j << " ";
+        }
+    }
+}
+
+void fabonacciSeries(int n)
+{
+    int num1 = 0, num2 = 1, num = 0;
+
+    // cout << num1 << " " << num2 << " ";
+
+    if (n == 0)
+    {
+        cout << num1;
+    }
+    else if (n == 1)
+    {
+        cout << num2;
+    }
+    else
+    {
+        // 0 1 1 2 3 5 8 13 21 ...
+        for (int i = 0; i <= n - 2; i++)
+        {
+            num = num1 + num2;
+            if (i == n -3)
+            {
+                cout << num;
+            }
+            // cout << num << " ";
+            num1 = num2;
+            num2 = num;
         }
     }
 }
@@ -123,7 +154,10 @@ int main()
     // cout << "Binomial Coefficient: " << binomialCoefficient(7, 2);
 
     // isPrimeOrNot(121);
-    
-    primeNumbersTillN(20);
+
+    // primeNumbersTillN(20);
+
+    fabonacciSeries(7);
+
     return 0;
 }
