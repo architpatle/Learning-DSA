@@ -5,6 +5,8 @@ using namespace std;
 /* ---------- INDEX ----------
 1. To find maximum subarray's sum
 2. Kadane's algorithm
+3. Maximum Product Subarray using Brute Force
+4. Maximum Product Subarray for O(n)
 */
 
 // To find maximum subarray's sum
