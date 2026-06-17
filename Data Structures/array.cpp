@@ -156,10 +156,8 @@ void uniqueValueInArray(int arr[], int size)
 
 void intersectionOfArray(int arr1[], int arr2[], int size)
 {
-
     for (int i = 0; i < size; i++)
     {
-
         bool isMatch = false;
 
         for (int j = 0; j < size; j++)

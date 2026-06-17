@@ -9,7 +9,7 @@ using namespace std;
 4. Maximum Product Subarray for O(n)
 */
 
-// To find maximum subarray's sum
+// 1. To find maximum subarray's sum
 void maxSubarraySum(int arr[], int size)
 {
     int maxSum = INT16_MIN;

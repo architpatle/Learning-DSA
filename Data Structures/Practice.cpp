@@ -7,7 +7,10 @@ using namespace std;
  2. Linear Search in an Array
  3. Reverse an Array
  4. Sum and Products of all the Array Numbers
- 5.  Swap Max Num and Min Num in an Array
+ 5. Swap Max Num and Min Num in an Array
+ 6. Find unique values in an array
+ 7. Intersection of Arrays
+ 8. Maximum Sub-array's Sum
 */
 
 // 1. To Find Maximum and Minimum Number in an Array
@@ -109,9 +112,75 @@ vector<int> swapMaxAndMin(vector<int> &nums)
     return nums;
 }
 
+// 6. Find unique values in an array
+vector<int> uniqueValues(vector<int> &nums)
+{
+    vector<int> ans;
+
+    for (int i = 0; i < nums.size(); i++)
+    {
+
+        bool isUnique = true;
+
+        for (int j = 0; j < nums.size(); j++)
+        {
+            if ((nums[i] == nums[j]) && i != j)
+            {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique)
+        {
+            ans.push_back(nums[i]);
+        }
+    }
+
+    return ans;
+}
+
+// 7. Intersection of Arrays
+vector<int> intersectionOfArrays(vector<int> arr1, vector<int> arr2)
+{
+    vector<int> ans;
+
+    for (int val1 : arr1)
+    {
+        for (int val2 : arr2)
+        {
+            if (val1 == val2)
+            {
+                ans.push_back(val1);
+                break;
+            }
+        }
+    }
+
+    return ans;
+}
+
+// 8. Maximum Sub-array's Sum
+int maxSubarraySum(vector<int> nums){
+    int maxSum = INT16_MIN;
+    
+    for(int i =0; i<nums.size(); i++){
+        int currentSum = 0;
+        for( int j =i; j<nums.size(); j++ ){
+            currentSum += nums[j]; 
+        maxSum = max(maxSum, currentSum);
+
+        }
+        
+        
+    }
+    return maxSum;
+}
+
 int main()
 {
-    vector<int> nums = {2, 6, 12, -8, -1};
+    vector<int> nums = {3, -1, 3, 6, 4, 2};
+    vector<int> arr1 = {3, 1, 3, 6, 4, 2};
+    vector<int> arr2 = {3, 4, 6, 2, 2};
 
     // 1.
     //  vector<int> ans = maxAndMin(nums);
@@ -133,11 +202,28 @@ int main()
     //      << "Product: " << ans[1];
 
     // 5.
-    vector<int> ans = swapMaxAndMin(nums);
-    for (int val : ans)
-    {
-        cout << val << " ";
-    }
+    // vector<int> ans = swapMaxAndMin(nums);
+    // for (int val : ans)
+    // {
+    //     cout << val << " ";
+    // }
+
+    // 6.
+    // vector<int> ans = uniqueValues(nums);
+    // for (int val : ans)
+    // {
+    //     cout << val << " ";
+    // }
+
+    // 7.
+    // vector<int> ans = intersectionOfArrays(arr1, arr2);
+    // for (int val : ans)
+    // {
+    //     cout << val << " ";
+    // }
+
+    // 8.
+   cout<< maxSubarraySum(nums);
 
     return 0;
 }
