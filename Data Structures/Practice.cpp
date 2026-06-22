@@ -10,7 +10,9 @@ using namespace std;
  5. Swap Max Num and Min Num in an Array
  6. Find unique values in an array
  7. Intersection of Arrays
- 8. Maximum Sub-array's Sum
+ 8. Maximum Sub-array's Sum (Kadane's Algorithm)
+ 9. Maximum Product of Subarray
+
 */
 
 // 1. To Find Maximum and Minimum Number in an Array
@@ -159,26 +161,51 @@ vector<int> intersectionOfArrays(vector<int> arr1, vector<int> arr2)
     return ans;
 }
 
-// 8. Maximum Sub-array's Sum
-int maxSubarraySum(vector<int> nums){
+// 8. Maximum Sub-array's Sum (Kadane's Algorithm)
+int maxSubarraySum(vector<int> nums)
+{
     int maxSum = INT16_MIN;
-    
-    for(int i =0; i<nums.size(); i++){
-        int currentSum = 0;
-        for( int j =i; j<nums.size(); j++ ){
-            currentSum += nums[j]; 
+    int currentSum = 0;
+
+    for (int i = 0; i < nums.size(); i++)
+    {
+        currentSum += nums[i];
         maxSum = max(maxSum, currentSum);
 
+        if (currentSum < 0)
+        {
+            currentSum = 0;
         }
-        
-        
     }
     return maxSum;
 }
 
+// 9. Maximum Product of Subarray
+int maxSubarrayProduct(vector<int> nums)
+{
+
+    int maxProduct = nums[0], maxEndingHere = nums[0], minEndingHere = nums[0];
+
+    for (int i = 1; i < nums.size(); i++)
+    {
+
+        if (nums[i] < 0)
+        {
+            swap(minEndingHere, maxEndingHere);
+        }
+
+        minEndingHere = min(nums[i], minEndingHere * nums[i]);
+        maxEndingHere = max(nums[i], maxEndingHere * nums[i]);
+
+        maxProduct = max(maxProduct, maxEndingHere);
+    }
+
+    return maxProduct;
+}
+
 int main()
 {
-    vector<int> nums = {3, -1, 3, 6, 4, 2};
+    vector<int> nums = {3, -4, 3, 6, -4, -2};
     vector<int> arr1 = {3, 1, 3, 6, 4, 2};
     vector<int> arr2 = {3, 4, 6, 2, 2};
 
@@ -223,7 +250,10 @@ int main()
     // }
 
     // 8.
-   cout<< maxSubarraySum(nums);
+    // cout << maxSubarraySum(nums);
+
+    // 9.
+    cout << maxSubarrayProduct(nums);
 
     return 0;
 }

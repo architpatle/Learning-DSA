@@ -71,7 +71,6 @@ void maximumProductSubarrayBF(int arr[], int size)
 // 4. Maximum Product Subarray for O(n)
 int maximumProductSubArray(int arr[], int size)
 {
-
     int maxEndingHere = arr[0];
     int minEndingHere = arr[0];
     int maxProduct = arr[0];
