@@ -1,17 +1,19 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 /* ---------- INDEX ----------
- 1. To Find Maximum and Minimum Number in an Array
- 2. Linear Search in an Array
- 3. Reverse an Array
- 4. Sum and Products of all the Array Numbers
- 5. Swap Max Num and Min Num in an Array
- 6. Find unique values in an array
- 7. Intersection of Arrays
- 8. Maximum Sub-array's Sum (Kadane's Algorithm)
- 9. Maximum Product of Subarray
+ 01. To Find Maximum and Minimum Number in an Array
+ 02. Linear Search in an Array
+ 03. Reverse an Array
+ 04. Sum and Products of all the Array Numbers
+ 05. Swap Max Num and Min Num in an Array
+ 06. Find unique values in an array
+ 07. Intersection of Arrays
+ 08. Maximum Sub-array's Sum (Kadane's Algorithm)
+ 09. Maximum Product of Subarray
+ 10. Majority Element in an Array
 
 */
 
@@ -203,9 +205,34 @@ int maxSubarrayProduct(vector<int> nums)
     return maxProduct;
 }
 
+// 10. Majority Element in an Array (Moore's Voting Algorithm)
+int majorityElementInAnArray(vector<int> nums)
+{
+    int ans = 0;
+    int frequency = 0;
+
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (frequency == 0)
+        {
+            ans = nums[i];
+        }
+
+        if (ans == nums[i])
+        {
+            frequency++;
+        }
+        else
+        {
+            frequency--;
+        }
+    }
+    return ans;
+}
+
 int main()
 {
-    vector<int> nums = {3, -4, 3, 6, -4, -2};
+    vector<int> nums = {3, 4, 5, 3, 3, 5, 3, 3, 3, 5, 3, 2, 3, 3};
     vector<int> arr1 = {3, 1, 3, 6, 4, 2};
     vector<int> arr2 = {3, 4, 6, 2, 2};
 
@@ -253,7 +280,10 @@ int main()
     // cout << maxSubarraySum(nums);
 
     // 9.
-    cout << maxSubarrayProduct(nums);
+    // cout << maxSubarrayProduct(nums);
+
+    // 10.
+    cout << majorityElementInAnArray(nums);
 
     return 0;
 }
