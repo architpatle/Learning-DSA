@@ -13,7 +13,8 @@ using namespace std;
  07. Intersection of Arrays
  08. Maximum Sub-array's Sum (Kadane's Algorithm)
  09. Maximum Product of Subarray
- 10. Majority Element in an Array
+ 10. Majority Element in an Array (Moore's Voting Algorithm)
+ 11. Pair Sum in an Array
 
 */
 
@@ -230,60 +231,47 @@ int majorityElementInAnArray(vector<int> nums)
     return ans;
 }
 
+// 11. Pair Sum in an Array
+vector<int> pairSum(vector<int> nums, int target)
+{
+    vector<int> ans;
+    int size = nums.size();
+    int start = 0, end = size - 1;
+
+    while (start < end)
+    {
+        int pairSum = nums[start] + nums[end];
+
+        if (pairSum < target)
+        {
+            start++;
+        }
+        else if (pairSum > target)
+        {
+            end--;
+        }
+        else
+        {
+            ans.push_back(nums[start]);
+            ans.push_back(nums[end]);
+            return ans;
+        }
+    }
+}
+
 int main()
 {
-    vector<int> nums = {3, 4, 5, 3, 3, 5, 3, 3, 3, 5, 3, 2, 3, 3};
+    vector<int> nums = {3, 6, 7, 9};
     vector<int> arr1 = {3, 1, 3, 6, 4, 2};
     vector<int> arr2 = {3, 4, 6, 2, 2};
+    int target = 10;
 
-    // 1.
-    //  vector<int> ans = maxAndMin(nums);
+    vector<int> ans = pairSum(nums, target);
 
-    // cout << "Max Num: " << ans[0] << endl
-    //      << "Min Num: " << ans[1];
-
-    // 2.
-    // int target = 2333;
-
-    // cout << linearSearch(nums, target);
-
-    // 3.
-    // reverseAnArray(nums);
-
-    // 4.
-    // vector<int> ans = sumAndProducts(nums);
-    // cout << "Sum: " << ans[0] << endl
-    //      << "Product: " << ans[1];
-
-    // 5.
-    // vector<int> ans = swapMaxAndMin(nums);
-    // for (int val : ans)
-    // {
-    //     cout << val << " ";
-    // }
-
-    // 6.
-    // vector<int> ans = uniqueValues(nums);
-    // for (int val : ans)
-    // {
-    //     cout << val << " ";
-    // }
-
-    // 7.
-    // vector<int> ans = intersectionOfArrays(arr1, arr2);
-    // for (int val : ans)
-    // {
-    //     cout << val << " ";
-    // }
-
-    // 8.
-    // cout << maxSubarraySum(nums);
-
-    // 9.
-    // cout << maxSubarrayProduct(nums);
-
-    // 10.
-    cout << majorityElementInAnArray(nums);
+    for (int val : ans)
+    {
+        cout << val << " ";
+    }
 
     return 0;
 }
