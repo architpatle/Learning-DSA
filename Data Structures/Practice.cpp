@@ -15,7 +15,10 @@ using namespace std;
  09. Maximum Product of Subarray
  10. Majority Element in an Array (Moore's Voting Algorithm)
  11. Pair Sum in an Array
-
+ 12. To Find Maximum Profit by Buying and Selling the Stock
+ 13. Container with Most Water
+ 14. Product of Array Number except Self
+ 15. Binary Exponentiation
 */
 
 // 1. To Find Maximum and Minimum Number in an Array
@@ -259,19 +262,105 @@ vector<int> pairSum(vector<int> nums, int target)
     }
 }
 
+// 12. To Find Maximum Profit by Buying and Selling the Stock
+int maxProfitBuyAndSellStock(vector<int> prices)
+{
+    int maxProfit = 0;
+    int bestBuy = prices[0];
+
+    for (int i = 1; i < prices.size(); i++)
+    {
+        int bestSell = prices[i];
+
+        if (bestBuy < bestSell)
+        {
+            maxProfit = max(maxProfit, bestSell - bestBuy);
+        }
+        bestBuy = min(bestBuy, bestSell);
+    }
+
+    return maxProfit;
+}
+
+// 13. Container with Most Water
+int containerWithMostWater(vector<int> heights)
+{
+    int maxArea = 0;
+    int leftHeight = 0, rightHeight = heights.size() - 1;
+
+    while (leftHeight < rightHeight)
+    {
+        int height = min(heights[leftHeight], heights[rightHeight]);
+        int base = rightHeight - leftHeight;
+
+        int area = height * base;
+
+        maxArea = max(maxArea, area);
+
+        if (heights[leftHeight] < heights[rightHeight])
+        {
+
+            leftHeight++;
+        }
+        else
+        {
+            rightHeight--;
+        }
+    }
+    return maxArea;
+}
+
+// 14. Product of Array Number except Self
+vector<int> productOfArrayExceptSelf(vector<int> nums)
+{
+    vector<int> ans(nums.size(), 1);
+
+    for (int i = 1; i < nums.size(); i++)
+    {
+        ans[i] = ans[i - 1] * nums[i - 1];
+    }
+
+    int suffix = 1;
+    for (int i = nums.size() - 2; i >= 0; i--)
+    {
+        suffix *= nums[i + 1];
+        ans[i] *= suffix;
+    }
+
+    return ans;
+}
+
+// 15. Binary Exponentiation
+double binaryExponentiation(double x, int n)
+{
+
+    int ans = 1;
+
+    if (n < 0)
+    {
+        x = 1 / x;
+        n = -n;
+    }
+
+    while (n > 0)
+    {
+        if (n % 2 == 1)
+        {
+            ans *= x;
+        }
+        x *= x;
+        n /= 2;
+    }
+
+    return ans;
+}
+
 int main()
 {
     vector<int> nums = {3, 6, 7, 9};
-    vector<int> arr1 = {3, 1, 3, 6, 4, 2};
-    vector<int> arr2 = {3, 4, 6, 2, 2};
-    int target = 10;
+    vector<int> heights = {5, 2, 8, 1, 8};
 
-    vector<int> ans = pairSum(nums, target);
-
-    for (int val : ans)
-    {
-        cout << val << " ";
-    }
+    cout << binaryExponentiation(3, -5);
 
     return 0;
 }

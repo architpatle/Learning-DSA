@@ -27,7 +27,7 @@ double binaryExponentiation(double x, int n)
 
 int main()
 {
-    cout << binaryExponentiation(2, 10);
+    cout << binaryExponentiation(2, -10);
 
     return 0;
 }
