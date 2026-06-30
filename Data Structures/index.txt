@@ -1,0 +1,17 @@
+01. To Find Maximum and Minimum Number in an Array
+02. Linear Search in an Array
+03. Reverse an Array
+04. Sum and Products of all the Array Numbers
+05. Swap Max Num and Min Num in an Array
+06. Find unique values in an array
+07. Intersection of Arrays
+08. Maximum Sub-array's Sum (Kadane's Algorithm)
+09. Maximum Product of Subarray
+10. Majority Element in an Array (Moore's Voting Algorithm)
+11. Pair Sum in an Array
+12. To Find Maximum Profit by Buying and Selling the Stock
+13. Container with Most Water
+14. Product of Array Number except Self
+15. Binary Exponentiation
+16. Binary Search Algorithm
+17. Search in Rotated Sorted Array
