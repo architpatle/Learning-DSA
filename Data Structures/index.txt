@@ -15,3 +15,5 @@
 15. Binary Exponentiation
 16. Binary Search Algorithm
 17. Search in Rotated Sorted Array
+18. Searching Peak Index in Mountain Array
+19. Searching Single Element in Sorted Array ( where other Elements are in pair of two [2,2,3,3,5,6,6,8,8])
