@@ -19,3 +19,4 @@
 19. Searching Single Element in Sorted Array ( where other Elements are in pair of two [2,2,3,3,5,6,6,8,8])
 20. Book Allocation Problem
 21. Painter's Partition Problem
+22. Agrresive Cows Problem
