@@ -21,6 +21,8 @@ using namespace std;
  15. Binary Exponentiation
  16. Binary Search Algorithm
  17. Search in Rotated Sorted Array
+ 18. Searching Peak Index in Mountain Array
+
 
 */
 
@@ -424,12 +426,37 @@ int SearchInRotatedSortedArray(vector<int> arr, int target)
     return -1;
 }
 
+// 18. Searching Peak Index in Mountain Array
+int SearchingPeakIndexInMountainArray(vector<int> arr)
+{
+    int start = 1, end = arr.size() - 2;
+
+    while (start <= end)
+    {
+        int mid = start + ((end - start) / 2);
+
+        if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1])
+        {
+            return mid;
+        }
+
+        if (arr[mid - 1] < arr[mid] )
+        {
+            start = mid + 1;
+        } else {
+            end = mid -1;
+        }
+    }
+
+    return -1;
+}
+
 int main()
 {
-    vector<int> nums = {3, 6, 7, 9, 0, 1, 2};
+    vector<int> nums = {3, 6, 7, 9, 10, 1, 2};
     vector<int> heights = {5, 2, 8, 1, 8};
 
-    cout << SearchInRotatedSortedArray(nums, 1);
+    cout << SearchingPeakIndexInMountainArray(nums);
 
     return 0;
 }
