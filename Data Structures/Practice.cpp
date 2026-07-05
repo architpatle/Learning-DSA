@@ -19,6 +19,9 @@ using namespace std;
  13. Container with Most Water
  14. Product of Array Number except Self
  15. Binary Exponentiation
+ 16. Binary Search Algorithm
+ 17. Search in Rotated Sorted Array
+
 */
 
 // 1. To Find Maximum and Minimum Number in an Array
@@ -355,12 +358,78 @@ double binaryExponentiation(double x, int n)
     return ans;
 }
 
+// 16. Binary Search Algorithm
+int BinarySearchAlgorithm(vector<int> arr, int target)
+{
+    int start = 0, end = arr.size() - 1;
+
+    while (start <= end)
+    {
+        int mid = start + ((end - start / 2));
+
+        if (arr[mid] == target)
+        {
+            return mid;
+        }
+        else if (arr[mid] > target)
+        {
+            end = mid - 1;
+        }
+        else
+        {
+            start = mid + 1;
+        }
+    }
+
+    return -1;
+}
+
+// 17. Search in Rotated Sorted Array
+int SearchInRotatedSortedArray(vector<int> arr, int target)
+{
+    int start = 0, end = arr.size() - 1;
+
+    while (start <= end)
+    {
+        int mid = start + ((end - start)) / 2;
+
+        if (arr[mid] == target)
+        {
+            return mid;
+        }
+        if (arr[mid] >= arr[start])
+        {
+            if (arr[start] <= target && target <= arr[mid])
+            {
+                end = mid - 1;
+            }
+            else
+            {
+                start = mid + 1;
+            }
+        }
+        else
+        {
+            if (arr[mid] <= target && target <= arr[end])
+            {
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+        }
+    }
+
+    return -1;
+}
+
 int main()
 {
-    vector<int> nums = {3, 6, 7, 9};
+    vector<int> nums = {3, 6, 7, 9, 0, 1, 2};
     vector<int> heights = {5, 2, 8, 1, 8};
 
-    cout << binaryExponentiation(3, -5);
+    cout << SearchInRotatedSortedArray(nums, 1);
 
     return 0;
 }
