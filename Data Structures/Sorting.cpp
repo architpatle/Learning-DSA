@@ -7,7 +7,6 @@ using namespace std;
 // 2. Selection Sort
 // 3. Insertion Sort
 
-
 // 1. Bubble Sort
 void BubbleSort(vector<int> &arr)
 {
@@ -71,6 +70,62 @@ void InsertionSort(vector<int> &arr)
     }
 }
 
+// ----- PRACTICE -----
+
+// 1. Bubble Sort
+void BubbleSortPractice(vector<int> &arr)
+{
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+
+        for (int j = 0; j < arr.size() - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}
+
+// 2. Selection Sort
+void SelectionSortPractice(vector<int> &arr)
+{
+    for (int i = 0; i < arr.size(); i++)
+    {
+        int smallestIdx = i;
+
+        for (int j = i + 1; j < arr.size(); j++)
+        {
+            if (arr[smallestIdx] > arr[j])
+            {
+                smallestIdx = j;
+            }
+        }
+
+        swap(arr[smallestIdx], arr[i]);
+    }
+}
+
+// 3. Insertion Sort
+void InsertionSortPractice(vector<int> &arr)
+{
+
+    for (int i = 1; i < arr.size(); i++)
+    {
+        int curr = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && curr < arr[j])
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = curr;
+    }
+}
 int main()
 {
     vector<int> nums = {
@@ -84,7 +139,7 @@ int main()
         6,
     };
 
-    InsertionSort(nums);
+    InsertionSortPractice(nums);
 
     cout << "sortedArr: ";
 
