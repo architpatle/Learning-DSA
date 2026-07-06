@@ -22,3 +22,5 @@
 22. Agrresive Cows Problem
 23. Sorting: 
     a. Bubble Sort
+    b. Selection Sort
+    c. Insertion Sort
