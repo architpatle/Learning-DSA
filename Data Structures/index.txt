@@ -20,3 +20,5 @@
 20. Book Allocation Problem
 21. Painter's Partition Problem
 22. Agrresive Cows Problem
+23. Sorting: 
+    a. Bubble Sort
