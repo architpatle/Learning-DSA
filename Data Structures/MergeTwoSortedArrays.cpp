@@ -65,19 +65,44 @@ void MergeTwoSortedArraysOA(vector<int> &arr1, vector<int> &arr2)
         idx--;
         j--;
     }
+}
 
+// Practice
+void MergePractice(vector<int> &A, int m, vector<int> &B, int n)
+{
+    int idx = m + n - 1, i = m - 1, j = n - 1;
+
+    while (i >= 0 && j >= 0)
+    {
+        if (A[i] >= B[j])
+        {
+            A[idx--] = A[i--];
+        }
+        else
+        {
+            A[idx--] = B[j--];
+        }
+    }
+
+    while (j >= 0)
+    {
+        A[idx--] = B[j--];
+    }
+
+    return;
 }
 
 int main()
 {
-    vector<int> arr1 = {11, 12, 16};
+    vector<int> arr1 = {11, 12, 16, 0, 0, 0};
     vector<int> arr2 = {12, 14, 15};
+    int m = 3, n = 3;
 
-    MergeTwoSortedArraysOA(arr1, arr2);
+    MergePractice(arr1, m, arr2, n);
 
-    cout<<endl;
-    for(int i =0; i<arr1.size() +arr2.size() -1; i++){
-        cout<<arr1[i]<<" ";
+    for (int val : arr1)
+    {
+        cout << val << " ";
     }
     return 0;
 }

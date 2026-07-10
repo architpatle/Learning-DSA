@@ -63,12 +63,63 @@ void NextPermutation(vector<int> &arr)
     }
 }
 
+void NextPermutationPractice(vector<int> &arr)
+{
+
+    // Find Pivot
+    int pivot = -1;
+    int n = arr.size();
+
+    for (int i = n - 2; i >= 0; i--)
+    {
+        if (arr[i] < arr[i + 1])
+        {
+            pivot = i;
+            break;
+        }
+    }
+
+    // if pivot remains -1;
+    if (pivot == -1)
+    {
+
+        int start = 0, end = n - 1;
+        while (start <= end)
+        {
+            swap(arr[start], arr[end]);
+            start++;
+            end--;
+        }
+        return;
+    }
+
+    // Swap Right most element with pivot element
+    for (int i = n - 1; i >= pivot; i--)
+    {
+        if (arr[pivot] < arr[i])
+        {
+            swap(arr[pivot], arr[i]);
+            break;
+        }
+    }
+
+    // Reverse the pivot+1 to n-1
+    int i = pivot + 1, j = n - 1;
+    while (i <= j)
+    {
+        swap(arr[i], arr[j]);
+        i++;
+        j--;
+    }
+    return;
+}
+
 int main()
 {
 
-    vector<int> arr = {1,2,5,4,3};
+    vector<int> arr = {1, 2, 5, 4, 3};
 
-    NextPermutation(arr);
+    NextPermutationPractice(arr);
 
     for (int val : arr)
     {
