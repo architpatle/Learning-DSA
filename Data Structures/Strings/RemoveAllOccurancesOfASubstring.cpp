@@ -13,12 +13,18 @@ string RemoveAllOccurancesOfASubstring(string str, string part)
     return str;
 }
 
+string RemoveAllOccurancesOfASubstringPractice(string str, string part){
+    while(str.length()>0 && str.find(part) < str.length()){
+        str.erase(str.find(part), part.length());
+    }
+    return str;
+}
 int main()
 {
 
     string str = "abcbcaabc";
     string part = "abc";
 
-    cout << RemoveAllOccurancesOfASubstring(str, part);
+    cout << RemoveAllOccurancesOfASubstringPractice(str, part);
     return 0;
 }
