@@ -46,15 +46,58 @@ bool PermutationInStrings(string s1, string s2)
         }
     }
 
-    return false;  
+    return false;
+}
+
+bool isSameFreqPractice(int freq1[], int freq2[])
+{
+    for (int i = 0; i < 26; i++)
+    {
+        if (freq1[i] != freq2[i])
+            return false;
+    }
+    return true;
+}
+
+bool PermutationStringsPractice(string s1, string s2)
+{
+    int freq[26] = {0};
+
+    for (int i = 0; i < s1.length(); i++)
+    {
+        freq[s1[i] - 'a']++;
+    }
+
+    int windowSize = s1.length();
+
+    for (int i = 0; i < s2.length(); i++)
+    {
+        int idx = i, windowIdx = 0;
+
+        int windowFreq[26] = {0};
+
+        while (windowIdx < windowSize && idx < s2.length())
+        {
+            windowFreq[s2[idx] - 'a']++;
+            idx++;
+            windowIdx++;
+        }
+
+        if (isSameFreqPractice(freq, windowFreq))
+            return true;
+    }
+
+    return false;
 }
 
 int main()
 {
 
-    string s1 = "ab", s2 = "eodabcd";
+    string s1 = "aba", s2 = "eodabcd";
 
-    cout << PermutationInStrings(s1, s2);
+    cout << PermutationInStrings(s1, s2)<<endl;
+    cout << PermutationStringsPractice(s1, s2);
+
 
     return 0;
 }
