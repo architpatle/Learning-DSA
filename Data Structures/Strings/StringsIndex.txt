@@ -2,3 +2,4 @@
 2. Remove All Occurances Of A Substring
 3. Permutation In Strings
 4. Reverse Words In Strings
+5. String Compression
