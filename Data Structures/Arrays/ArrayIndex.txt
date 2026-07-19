@@ -28,3 +28,4 @@
 25. Merge Two Sorted Arrays
 26. Next Permutation
 27. 2D-Array Binaray Search
+28. Spiral Matrix
