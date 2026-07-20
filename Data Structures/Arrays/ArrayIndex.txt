@@ -29,3 +29,5 @@
 26. Next Permutation
 27. 2D-Array Binaray Search
 28. Spiral Matrix
+29. 2-Sum
+30. Find Repeating and Missing Number from a Grid
