@@ -75,20 +75,83 @@ int DiagonalSum(int matrix[][3], int n){
     return sum;
 }
 
+
+/* ----- PRACTICE ----- */
+pair<int,int> linearSearchInMatrixPractice(vector<vector<int>> mat, int key){
+
+    int m = mat.size(), n = mat[0].size();
+
+    for( int i =0; i<m; i++){
+        for(int j =0; j<n; j++){
+            if(mat[i][j] == key){
+                return {i,j};
+            }
+        }
+    }
+    return {-1,-1};
+}
+
+int MaxRowSumPractice(vector<vector<int>> mat){
+    int maxSum = INT32_MIN;
+    int m = mat.size(), n = mat[0].size();
+
+    for(int i =0; i<m; i++){
+        int currentSum = 0;
+        for(int j =0; j<n; j++){
+            currentSum+=mat[i][j];
+        }
+        maxSum = max(maxSum, currentSum);
+    }
+
+    return maxSum;
+}
+
+int MaxColSumPractice(vector<vector<int>> mat){
+    int maxSum = INT32_MIN;
+    int m = mat.size(), n = mat[0].size();
+
+    for(int j = 0; j<n; j++){
+        int currentSum = 0;
+
+        for(int i =0; i<m; i++){
+            currentSum+= mat[i][j];
+        }
+
+        maxSum = max(maxSum, currentSum);
+    }
+
+    return maxSum;
+}
+
+int DiagonalSumPractice(vector<vector<int>> mat){
+    int n = mat.size();
+    int diagonalSum=0;
+
+    for(int i =0; i<n; i++){
+        diagonalSum+= mat[i][i];
+
+        if(i!= n-1-i){
+            diagonalSum+= mat[i][n-1-i];
+        }
+    }
+
+    return diagonalSum;
+}
+
 int main()
 {
     int row = 3, col = 3, n=3;
-    int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    int key = 5;
+    vector<vector<int>> matrix = {{1, 12, 13}, {4, 25, 16}, {7, 8, 119}};
+    int key = 82;
 
-    // pair<int,int> ans = linearSearchInMatrix(matrix, row, col, key);
+    // pair<int,int> ans = linearSearchInMatrixPractice(matrix, key);
     // cout<<ans.first<<" ";
     // cout<<ans.second<<" ";
 
-    // cout << MaxRowSum(matrix, row, col) <<endl;
-    // cout << MaxColSum(matrix, row, col) <<endl;
+    // cout << MaxRowSumPractice(matrix) <<endl;
+    // cout << MaxColSumPractice(matrix) <<endl;
 
-    cout<<DiagonalSum(matrix, n);
+    cout<<DiagonalSumPractice(matrix);
 
 
     return 0;

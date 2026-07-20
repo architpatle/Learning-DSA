@@ -75,6 +75,71 @@ bool MatrixBinarySearchTwo(vector<vector<int>> mat, int target){
     return false;
 
 }
+
+
+
+/* ----- PRACTICE ----- */
+bool SearchInRowPractice(vector<vector<int>> matrix,int key, int mRow){
+
+    int n = matrix[0].size();
+
+    int start = 0, end = n-1;
+    
+    while (start<=end)
+    {
+        int mid = start +((end-start)/2);
+
+        if(matrix[mRow][mid] == key){
+            return true;
+        } else if(matrix[mRow][mid] > key){
+            end = mid-1;
+        } else {
+            start = mid+1;
+        }
+
+    }
+    
+
+    return false;
+}
+
+bool MatrixBinarySearchPractice(vector<vector<int>> matrix, int key){
+
+    int m = matrix.size(), n = matrix[0].size();
+
+    int sRow = 0, eRow = m-1;
+
+    while(sRow<=eRow){
+        int mRow = (sRow+ ((eRow-sRow)/2));
+        if(matrix[mRow][0]<= key && key<= matrix[mRow][n-1]){
+            return SearchInRowPractice(matrix, key, mRow);
+        } else if(matrix[mRow][0] > key){
+            eRow = mRow-1;
+        } else {
+            sRow = mRow+1;
+        }
+    }
+    return false;
+}
+
+
+bool MatrixBinarySearchTwoPractice(vector<vector<int>> mat, int key){
+    int m = mat.size(), n =mat[0].size();
+
+    int r = 0, c = n-1;
+
+    while(r<m && c>=0){
+        if(mat[r][c] == key){
+            return true;
+        } else if(mat[r][c] > key){
+            c--;
+        } else {
+            r++;
+        }
+    }
+    return false;
+}
+
 int main()
 {
 
@@ -83,11 +148,11 @@ int main()
 
     // Matrix 2
     vector<vector<int>> matrix ={{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
-    int target = 99;
+    int target = 29;
 
-    // cout<<MatrixBinarySearch(matrix, target);
+    // cout<<MatrixBinarySearchPractice(matrix, target);
 
-    cout<<MatrixBinarySearchTwo(matrix, target);
+    cout<<MatrixBinarySearchTwoPractice(matrix, target);
 
 
     return 0;
