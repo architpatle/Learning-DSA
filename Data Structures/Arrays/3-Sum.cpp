@@ -132,7 +132,7 @@ vector<vector<int>> threeSumTPAPractice(vector<int> arr)
 
         int j = i + 1, k = n - 1;
 
-        while (j < k)
+        while (j < k)       
         {
             int sum = arr[i] + arr[j] + arr[k];
             if (sum < 0)
