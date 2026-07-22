@@ -74,7 +74,6 @@ vector<vector<int>> threeSumHBA(vector<int> arr)
 // 3. Two Pointer Approach
 vector<vector<int>> threeSumTPA(vector<int> arr) // TC: O(n^2 + nlog(n) | SC: O(uniqueTriplets)
 {
-
     int n = arr.size();
     vector<vector<int>> ans;
 
@@ -115,10 +114,56 @@ vector<vector<int>> threeSumTPA(vector<int> arr) // TC: O(n^2 + nlog(n) | SC: O(
 
     return ans;
 }
+
+// ----- PRACTICE -----
+vector<vector<int>> threeSumTPAPractice(vector<int> arr)
+{
+    vector<vector<int>> ans;
+    int n = arr.size();
+
+    sort(arr.begin(), arr.end());
+
+    for (int i = 0; i < n; i++)
+    {
+        if (i > 0 && arr[i] == arr[i - 1])
+            continue;
+
+        int target = -arr[i];
+
+        int j = i + 1, k = n - 1;
+
+        while (j < k)
+        {
+            int sum = arr[i] + arr[j] + arr[k];
+            if (sum < 0)
+            {
+                j++;
+            }
+            else if (sum > 0)
+            {
+                k--;
+            }
+            else
+            {
+                ans.push_back({arr[i], arr[j], arr[k]});
+                j++;
+                k--;
+
+                while (j < k && arr[j] == arr[j - 1])
+                {
+                    j++;
+                }
+            }
+        }
+    }
+
+    return ans;
+}
+
 int main()
 {
 
-    vector<int> nums = {-1, 0, 1, 2, 9};
+    vector<int> nums = {-1, 0, 1, 2, -1};
 
     vector<vector<int>> ans = threeSumTPA(nums);
 
