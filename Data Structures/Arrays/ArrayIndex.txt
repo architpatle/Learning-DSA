@@ -33,3 +33,4 @@
 30. Find Repeating and Missing Number from a Grid
 31. 3-Sum Problem 
 32. 4-Sum Problem 
+33. Subarray Sum Equals k
