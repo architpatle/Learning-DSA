@@ -34,3 +34,4 @@
 31. 3-Sum Problem 
 32. 4-Sum Problem 
 33. Subarray Sum Equals k
+34. Print All Subsets of an array 
