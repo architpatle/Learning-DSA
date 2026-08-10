@@ -6,6 +6,7 @@ using namespace std;
 // 1. Bubble Sort
 // 2. Selection Sort
 // 3. Insertion Sort
+// 4. Merge Sort
 
 // 1. Bubble Sort
 void BubbleSort(vector<int> &arr)
@@ -70,62 +71,61 @@ void InsertionSort(vector<int> &arr)
     }
 }
 
-// ----- PRACTICE -----
+// 4. Merge Sort
 
-// 1. Bubble Sort
-void BubbleSortPractice(vector<int> &arr)
+void Merge(vector<int> &arr, int start, int mid, int end)
 {
+    vector<int> temp;
+    int i = start, j = mid + 1;
 
-    for (int i = 0; i < arr.size(); i++)
+    while (i <= mid && j <= end)
     {
 
-        for (int j = 0; j < arr.size() - i - 1; j++)
+        if (arr[i] < arr[j])
         {
-            if (arr[j] > arr[j + 1])
-            {
-                swap(arr[j], arr[j + 1]);
-            }
+            temp.push_back(arr[i]);
+            i++;
         }
+        else
+        {
+            temp.push_back(arr[j]);
+            j++;
+        }
+    }
+
+    while (i <= mid)
+    {
+        temp.push_back(arr[i]);
+        i++;
+    }
+
+    while (j <= mid)
+    {
+        temp.push_back(arr[j]);
+        j++;
+    }
+
+    for (int idx = 0; idx < temp.size(); idx++)
+    {
+        arr[start + idx] = temp[idx];
+    }
+}
+void MergeSort(vector<int> &arr, int start, int end)
+{
+    if (start < end)
+    {
+        int mid = start + (end - start) / 2;
+
+        // dividing left half
+        MergeSort(arr, start, mid);
+
+        // dividing left half
+        MergeSort(arr, mid + 1, end);
+
+        Merge(arr, start, mid, end);
     }
 }
 
-// 2. Selection Sort
-void SelectionSortPractice(vector<int> &arr)
-{
-    for (int i = 0; i < arr.size(); i++)
-    {
-        int smallestIdx = i;
-
-        for (int j = i + 1; j < arr.size(); j++)
-        {
-            if (arr[smallestIdx] > arr[j])
-            {
-                smallestIdx = j;
-            }
-        }
-
-        swap(arr[smallestIdx], arr[i]);
-    }
-}
-
-// 3. Insertion Sort
-void InsertionSortPractice(vector<int> &arr)
-{
-
-    for (int i = 1; i < arr.size(); i++)
-    {
-        int curr = arr[i];
-        int j = i - 1;
-
-        while (j >= 0 && curr < arr[j])
-        {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-
-        arr[j + 1] = curr;
-    }
-}
 int main()
 {
     vector<int> nums = {
@@ -139,7 +139,7 @@ int main()
         6,
     };
 
-    InsertionSortPractice(nums);
+    MergeSort(nums, 0, nums.size() - 1);
 
     cout << "sortedArr: ";
 

@@ -3,3 +3,4 @@
 3. Permutation In Strings
 4. Reverse Words In Strings
 5. String Compression
+6. String Permutation using Recursion
