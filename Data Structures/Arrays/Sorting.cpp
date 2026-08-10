@@ -7,6 +7,7 @@ using namespace std;
 // 2. Selection Sort
 // 3. Insertion Sort
 // 4. Merge Sort
+// 5. Quick Sort
 
 // 1. Bubble Sort
 void BubbleSort(vector<int> &arr)
@@ -72,7 +73,6 @@ void InsertionSort(vector<int> &arr)
 }
 
 // 4. Merge Sort
-
 void Merge(vector<int> &arr, int start, int mid, int end)
 {
     vector<int> temp;
@@ -126,6 +126,41 @@ void MergeSort(vector<int> &arr, int start, int end)
     }
 }
 
+// 5. Quick Sort
+int Partition(vector<int> &arr, int start, int end)
+{
+    int idx = start - 1;
+    int pivotElement = arr[end];
+
+    for (int j = start; j < end; j++)
+    {
+        if (arr[j] <= pivotElement)
+        {
+            idx++;
+            swap(arr[j], arr[idx]);
+        }
+    }
+
+    idx++;
+    swap(arr[end], arr[idx]);
+
+    return idx;
+}
+void QuickSort(vector<int> &arr, int start, int end)
+{
+
+    if (start < end)
+    {
+
+        int pivotIdx = Partition(arr, start, end);
+
+        // left half partition
+        QuickSort(arr, start, pivotIdx - 1);
+
+        // right half partition
+        QuickSort(arr, pivotIdx + 1, end);
+    }
+}
 int main()
 {
     vector<int> nums = {
@@ -139,7 +174,7 @@ int main()
         6,
     };
 
-    MergeSort(nums, 0, nums.size() - 1);
+    QuickSort(nums, 0, nums.size() - 1);
 
     cout << "sortedArr: ";
 

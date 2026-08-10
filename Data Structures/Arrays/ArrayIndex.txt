@@ -25,6 +25,7 @@
     b. Selection Sort
     c. Insertion Sort
     d. Merge Sort
+    e. Quick Sort
 24. Dutch National Flag Algorithm
 25. Merge Two Sorted Arrays
 26. Next Permutation
