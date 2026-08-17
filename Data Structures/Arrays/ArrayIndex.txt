@@ -37,3 +37,4 @@
 32. 4-Sum Problem 
 33. Subarray Sum Equals k
 34. Print All Subsets of an array 
+35. Inversion Count
