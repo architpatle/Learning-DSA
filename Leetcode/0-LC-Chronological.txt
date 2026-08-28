@@ -2,3 +2,11 @@
 50. Pow(x,n)
 121. Best Time to Buy and Sell Stock
 11. Container With Most Water
+
+
+
+
+
+
+206. Reverse Linked List
+876. Middle of the Linked List
