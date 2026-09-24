@@ -146,7 +146,7 @@ public:
         while (temp != NULL)
         {                               // to traverse head to tail(NULL)
             cout << temp->data << "->"; // printing the data
-            temp = temp->next;          // assigning next node ptr to temp
+            temp = temp->next;          // assigning next node ptr to temp      
         }
         cout << "NULL" << endl; // upon reaching the last node
     }
