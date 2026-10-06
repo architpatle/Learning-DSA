@@ -26,7 +26,7 @@ public:
         head = tail = NULL;
     }
 
-    void pushFront(int val)
+    void push_front(int val)
     {
         Node *newNode = new Node(val);
 
@@ -42,7 +42,7 @@ public:
         }
     }
 
-    void pushBack(int val)
+    void push_back(int val)
     {
         Node *newNode = new Node(val);
 
@@ -58,37 +58,36 @@ public:
         }
     }
 
-    void popFront()
+    void pop_front()
     {
         if (head == NULL)
         {
-            cout << "DLL is empty" << endl;
+            cout << "Invalid Operation." << endl;
             return;
         }
 
         Node *temp = head;
-        head = head->next;
+
+        head = temp->next;
 
         if (head != NULL)
         {
             head->prev = NULL;
         }
-
         temp->next = NULL;
-
         delete temp;
     }
 
-    void popBack()
+    void pop_back()
     {
         if (head == NULL)
         {
-            cout << "DLL is empty" << endl;
+            cout << "Invalid Operation." << endl;
             return;
         }
 
         Node *temp = tail;
-        tail = tail->prev;
+        tail = temp->prev;
 
         if (tail != NULL)
         {
@@ -99,7 +98,6 @@ public:
         delete temp;
     }
 
-    // print linked list
     void print()
     {
         Node *temp = head;
@@ -111,7 +109,7 @@ public:
             cout << temp->data << " <=> ";
             temp = temp->next;
         }
-        cout << "NULL " << endl;
+        cout << "NULL" << endl;
     }
 };
 
@@ -119,31 +117,23 @@ int main()
 {
     doublyList dll;
 
-    dll.pushFront(1);
-    dll.pushFront(2);
-    dll.pushFront(3);
+    dll.push_front(1);
+    dll.push_front(2);
+    dll.push_front(3);
 
     dll.print();
 
-    dll.pushBack(4);
-    dll.pushBack(5);
-    dll.pushBack(6);
+    dll.push_back(4);
+    dll.push_back(5);
+    dll.push_back(6);
 
     dll.print();
 
-    dll.popFront();
+    dll.pop_front();
 
     dll.print();
 
-    dll.popFront();
-
-    dll.print();
-
-    dll.popBack();
-
-    dll.print();
-
-    dll.popBack();
+    dll.pop_back();
 
     dll.print();
 
