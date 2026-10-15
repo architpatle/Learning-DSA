@@ -18,3 +18,4 @@
 25. Reverse Nodes in k-Group
 24. Swap Nodes in Pairs
 20. Valid Parentheses
+496. Next Greater Element I
