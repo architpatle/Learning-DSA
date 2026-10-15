@@ -21,20 +21,21 @@ int main()
         }
 
         if (st.size() == 0)
-            {
-                ans[i] = i + 1;
-            }
-            else
-            {
-                ans[i] = i - st.top();
-            }
+        {
+            ans[i] = i + 1;
+        }
+        else
+        {
+            ans[i] = i - st.top();
+        }
 
-            st.push(i);
+        st.push(i);
     }
 
     // print ans array
-    for(int val:ans){
-        cout<<val<<" ";
+    for (int val : ans)
+    {
+        cout << val << " ";
     }
 
     return 0;
