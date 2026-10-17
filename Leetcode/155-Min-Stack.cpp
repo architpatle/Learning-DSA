@@ -3,9 +3,57 @@
 
 using namespace std;
 
+// ------------- APPROACH 1 ---------------
+
+// class MinStack
+// {
+//     stack<pair<int, int>> st;
+
+// public:
+//     MinStack()
+//     {
+//         // Initialize your stack here
+//     }
+
+//     void push(int value)
+//     {
+//         int minVal = min(value, minVal);
+
+//         if (st.empty())
+//         {
+//             st.push({value, value});
+//         }
+//         else
+//         {
+//             st.push({value, minVal});
+//         }
+//     }
+
+//     void pop()
+//     {
+//         // Write your solution here
+//         st.pop();
+//     }
+
+//     int top()
+//     {
+//         // Write your solution here
+//         return st.top().first;
+//     }
+
+//     int getMin()
+//     {
+//         // Write your solution here
+//         return st.top().second;
+//     }
+// };
+
+// ------------- APPROACH 2 -------------------
+
 class MinStack
 {
-    stack<pair<int, int>> st;
+    stack<long long int> st;
+    long long int minVal;
 
 public:
     MinStack()
@@ -15,34 +63,44 @@ public:
 
     void push(int value)
     {
-        int minVal = min(value, minVal);
-
         if (st.empty())
         {
-            st.push({value, value});
+            st.push(value);
+            minVal = value;
+        }
+        else if (value < minVal)
+        {
+            st.push((long long)2 * value - minVal);
+            minVal = value;
         }
         else
         {
-            st.push({value, minVal});
+            st.push(value);
         }
     }
 
     void pop()
     {
-        // Write your solution here
+        if (st.top() < minVal)
+        {
+            minVal = 2 * minVal - st.top();
+        }
+
         st.pop();
     }
 
     int top()
     {
-        // Write your solution here
-        return st.top().first;
+        if (st.top() < minVal)
+        {
+            return minVal;
+        }
+        return st.top();
     }
 
     int getMin()
     {
-        // Write your solution here
-        return st.top().second;
+        return minVal;
     }
 };
 
