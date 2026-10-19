@@ -20,3 +20,5 @@
 20. Valid Parentheses
 496. Next Greater Element I
 155. Min Stack
+84. Largest Rectangle in Histogram
+503. Next Greater Element II
