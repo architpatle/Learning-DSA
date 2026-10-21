@@ -6,31 +6,37 @@ using namespace std;
 int celebrity(vector<vector<int>> matrix)
 {
     stack<int> st;
-    int n =matrix.size();
+    int n = matrix.size();
 
     for (int i = 0; i < n; i++)
     {
         st.push(i);
     }
 
-    while(st.size() > 1){
+    while (st.size() > 1)
+    {
         int i = st.top();
         st.pop();
 
         int j = st.top();
         st.pop();
 
-        if(matrix[i][j] == 0){
+        if (matrix[i][j] == 0)
+        {
             st.push(i);
-        } else {
+        }
+        else
+        {
             st.push(j);
         }
     }
 
     int celeb = st.top();
 
-    for(int i = 0; i<n; i++){
-        if((i!=celeb) && (matrix[i][celeb] == 0 || matrix[celeb][i] == 1)){
+    for (int i = 0; i < n; i++)
+    {
+        if ((i != celeb) && (matrix[i][celeb] == 0 || matrix[celeb][i] == 1))
+        {
             return -1;
         }
     }
