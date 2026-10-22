@@ -24,3 +24,4 @@
 503. Next Greater Element II
 42. Trapping Rain Water
 14. Longest Common Prefix
+146. LRU Cache
