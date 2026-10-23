@@ -25,3 +25,4 @@
 42. Trapping Rain Water
 14. Longest Common Prefix
 146. LRU Cache
+28. Find the Index of the First Occurrence in a String
