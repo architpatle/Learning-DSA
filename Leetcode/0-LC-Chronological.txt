@@ -28,6 +28,9 @@
 146. LRU Cache
 28. Find the Index of the First Occurrence in a String
 58. Length of Last Word
+
 69. Sqrt(x)
 83. Remove Duplicates from Sorted List
 203. Remove Linked List Elements
+19. Remove Nth Node From End of List
+82. Remove Duplicates from Sorted List II
