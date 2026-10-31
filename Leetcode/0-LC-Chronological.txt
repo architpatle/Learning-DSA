@@ -36,3 +36,7 @@
 82. Remove Duplicates from Sorted List II
 160. Intersection of Two Linked Lists
 234. Palindrome Linked List
+61. Rotate List
+225. Implement Stack using Queues
+232. Implement Queue using Stacks
+414. Third Maximum Number
