@@ -40,3 +40,6 @@
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
 414. Third Maximum Number
+448. Find All Numbers Disappeared in an Array
+1721. Swapping Nodes in a Linked List
+387. First Unique Character in a String
