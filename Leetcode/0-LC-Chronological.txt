@@ -43,3 +43,5 @@
 448. Find All Numbers Disappeared in an Array
 1721. Swapping Nodes in a Linked List
 387. First Unique Character in a String
+485. Max Consecutive Ones
+1446. Consecutive Characters
