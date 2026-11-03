@@ -45,3 +45,6 @@
 387. First Unique Character in a String
 485. Max Consecutive Ones
 1446. Consecutive Characters
+
+239. Sliding Window Maximum
+1869. Longer Contiguous Segments of Ones than Zeros
