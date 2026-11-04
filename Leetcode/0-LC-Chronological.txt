@@ -48,3 +48,6 @@
 
 239. Sliding Window Maximum
 1869. Longer Contiguous Segments of Ones than Zeros
+3736. Minimum Moves to Equal Array Elements III
+441. Arranging Coins
+134. Gas Station
