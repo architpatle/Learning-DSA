@@ -51,3 +51,5 @@
 3736. Minimum Moves to Equal Array Elements III
 441. Arranging Coins
 134. Gas Station
+345. Reverse Vowels of a String
+682. Baseball Game
