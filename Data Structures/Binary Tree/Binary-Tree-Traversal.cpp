@@ -35,7 +35,6 @@ Node *buildTree(vector<int> &preorder)
 
 void preorder(Node *root)
 {
-
     if (root == NULL)
         return;
 
