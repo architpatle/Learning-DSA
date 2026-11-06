@@ -53,3 +53,5 @@
 134. Gas Station
 345. Reverse Vowels of a String
 682. Baseball Game
+1385. Find the Distance Value Between Two Arrays
+1047. Remove All Adjacent Duplicates In String
