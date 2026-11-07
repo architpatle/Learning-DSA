@@ -55,3 +55,5 @@
 682. Baseball Game
 1385. Find the Distance Value Between Two Arrays
 1047. Remove All Adjacent Duplicates In String
+1475. Final Prices With a Special Discount in a Shop
+3866. First Unique Even Element
