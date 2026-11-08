@@ -57,3 +57,6 @@
 1047. Remove All Adjacent Duplicates In String
 1475. Final Prices With a Special Discount in a Shop
 3866. First Unique Even Element
+1700. Number of Students Unable to Eat Lunch
+100. Same Tree
+572. Subtree of Another Tree
