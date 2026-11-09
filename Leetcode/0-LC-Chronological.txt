@@ -60,3 +60,4 @@
 1700. Number of Students Unable to Eat Lunch
 100. Same Tree
 572. Subtree of Another Tree
+3174. Clear Digits
