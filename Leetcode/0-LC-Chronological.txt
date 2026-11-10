@@ -61,3 +61,4 @@
 100. Same Tree
 572. Subtree of Another Tree
 3174. Clear Digits
+1365. How Many Numbers Are Smaller Than the Current Number
