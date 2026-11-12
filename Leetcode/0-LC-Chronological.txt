@@ -64,3 +64,4 @@
 1365. How Many Numbers Are Smaller Than the Current Number
 326. Power of Three
 1598. Crawler Log Folder
+704. Binary Search
