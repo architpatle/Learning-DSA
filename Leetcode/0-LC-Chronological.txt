@@ -65,3 +65,4 @@
 326. Power of Three
 1598. Crawler Log Folder
 704. Binary Search
+3105. Longest Strictly Increasing or Strictly Decreasing Subarray
