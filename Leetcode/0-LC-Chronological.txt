@@ -61,9 +61,13 @@
 100. Same Tree
 572. Subtree of Another Tree
 3174. Clear Digits
+
 1365. How Many Numbers Are Smaller Than the Current Number
 326. Power of Three
 1598. Crawler Log Folder
 704. Binary Search
 3105. Longest Strictly Increasing or Strictly Decreasing Subarray
 3477. Fruits Into Baskets II
+3364. Minimum Positive Sum Subarray 
+543. Diameter of Binary Tree
+112. Path Sum
