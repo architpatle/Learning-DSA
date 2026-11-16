@@ -71,3 +71,9 @@
 3364. Minimum Positive Sum Subarray 
 543. Diameter of Binary Tree
 112. Path Sum
+1524. Number of Sub-arrays With Odd Sum
+236. Lowest Common Ancestor of a Binary Tree
+94. Binary Tree Inorder Traversal
+144. Binary Tree Preorder Traversal
+145. Binary Tree Postorder Traversal
+589. N-ary Tree Preorder Traversal
