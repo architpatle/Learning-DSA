@@ -77,3 +77,9 @@
 144. Binary Tree Preorder Traversal
 145. Binary Tree Postorder Traversal
 589. N-ary Tree Preorder Traversal
+
+105. Construct Binary Tree from Preorder and Inorder Traversal
+257. Binary Tree Paths
+2243. Calculate Digit Sum of a String
+590. N-ary Tree Postorder Traversal
+844. Backspace String Compare
