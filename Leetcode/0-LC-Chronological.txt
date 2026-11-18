@@ -83,3 +83,7 @@
 2243. Calculate Digit Sum of a String
 590. N-ary Tree Postorder Traversal
 844. Backspace String Compare
+662. Maximum Width of Binary Tree
+1021. Remove Outermost Parentheses
+1614. Maximum Nesting Depth of the Parentheses
+71. Simplify Path
