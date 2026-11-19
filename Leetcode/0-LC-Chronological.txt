@@ -87,3 +87,6 @@
 1021. Remove Outermost Parentheses
 1614. Maximum Nesting Depth of the Parentheses
 71. Simplify Path
+2914. Minimum Number of Changes to Make Binary String Beautiful
+1544. Make The String Great
+2000. Reverse Prefix of Word
