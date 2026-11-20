@@ -90,3 +90,4 @@
 2914. Minimum Number of Changes to Make Binary String Beautiful
 1544. Make The String Great
 2000. Reverse Prefix of Word
+2696. Minimum String Length After Removing Substrings
