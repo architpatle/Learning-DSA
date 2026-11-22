@@ -92,3 +92,4 @@
 2000. Reverse Prefix of Word
 2696. Minimum String Length After Removing Substrings
 102. Binary Tree Level Order Traversal
+104. Maximum Depth of Binary Tree
