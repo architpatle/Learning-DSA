@@ -95,3 +95,4 @@
 104. Maximum Depth of Binary Tree
 2124. Check if All A's Appears Before All B's
 226. Invert Binary Tree
+1352. Product of the Last K Numbers
